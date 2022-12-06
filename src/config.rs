@@ -8,7 +8,7 @@ pub struct Sites(Vec<Site>);
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Site {
-    name: String,
+    // name: String,
     key: Vec<String>,
     url: String,
 }
