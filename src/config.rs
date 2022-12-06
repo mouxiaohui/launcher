@@ -9,7 +9,7 @@ pub struct Sites(Vec<Site>);
 #[derive(Debug, Clone, Deserialize)]
 pub struct Site {
     name: String,
-    key: String,
+    key: Vec<String>,
     url: String,
 }
 
@@ -25,12 +25,16 @@ impl Sites {
     }
 
     pub fn get_site(&self, key: &str) -> Option<&Site> {
-        self.0.iter().find(|v| v.key == key)
+        self.0.iter().find(|x| x.match_from_key(key))
     }
 }
 
 impl Site {
     pub fn join(&self, key_word: &str) -> String {
         self.url.replace("{}", key_word)
+    }
+
+    fn match_from_key(&self, key: &str) -> bool {
+        self.key.iter().any(|x| x == key)
     }
 }

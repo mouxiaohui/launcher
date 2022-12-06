@@ -1,22 +1,22 @@
 [
   {
     "name": "baidu",
-    "key": "bd",
+    "key": ["baidu", "bd"],
     "url": "https://www.baidu.com/s?wd={}"
   },
   {
     "name": "google",
-    "key": "gl",
+    "key": ["google", "gl"],
     "url": "https://www.google.com/search?q={}"
   },
   {
     "name": "crates.io",
-    "key": "cio",
+    "key": ["crates.io", "cio"],
     "url": "https://crates.io/crates/{}"
   },
   {
     "name": "docs.rs",
-    "key": "doc",
+    "key": ["docs.rs", "doc"],
     "url": "https://docs.rs/{}"
   }
 ]
