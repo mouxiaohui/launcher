@@ -3,6 +3,30 @@ use std::fs;
 use anyhow::{Context, Result};
 use serde::Deserialize;
 
+pub const DEFAULT_CONFIG: &[u8] = br#"[
+  {
+    "name": "baidu",
+    "key": ["baidu", "bd"],
+    "url": "https://www.baidu.com/s?wd={}"
+  },
+  {
+    "name": "google",
+    "key": ["google", "gl"],
+    "url": "https://www.google.com/search?q={}"
+  },
+  {
+    "name": "crates.io",
+    "key": ["crates.io", "cio"],
+    "url": "https://crates.io/crates/{}"
+  },
+  {
+    "name": "docs.rs",
+    "key": ["docs.rs", "doc"],
+    "url": "https://docs.rs/{}"
+  }
+]
+"#;
+
 #[derive(Debug, Deserialize)]
 pub struct Sites(Vec<Site>);
 
