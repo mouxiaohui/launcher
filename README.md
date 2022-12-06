@@ -24,6 +24,10 @@ Options:
 
 configuration example
 
+Lin: /home/<UserNmae>/.config/launcher/config.json
+Win: C:\Users\<UserNmae>\AppData\Roaming\launcher\config.json
+Mac: /Users/<UserNmae>/Library/Application Suppor/launcher/config.json
+
 ```json
 [
   {
