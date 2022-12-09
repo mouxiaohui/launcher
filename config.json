@@ -18,5 +18,10 @@
     "name": "docs.rs",
     "key": ["docs.rs", "doc"],
     "url": "https://docs.rs/{}"
+  },
+  {
+    "name": "rust-std",
+    "key": ["rust-std", "std"],
+    "url": "https://doc.rust-lang.org/std/"
   }
 ]

@@ -23,6 +23,11 @@ pub const DEFAULT_CONFIG: &[u8] = br#"[
     "name": "docs.rs",
     "key": ["docs.rs", "doc"],
     "url": "https://docs.rs/{}"
+  },
+  {
+    "name": "rust-std",
+    "key": ["rust-std", "std"],
+    "url": "https://doc.rust-lang.org/std/"
   }
 ]
 "#;
@@ -54,8 +59,12 @@ impl Sites {
 }
 
 impl Site {
-    pub fn join(&self, key_word: &str) -> String {
-        self.url.replace("{}", key_word)
+    pub fn join(&self, key_word: Option<String>) -> String {
+        if let Some(key_word) = key_word {
+            self.url.replace("{}", &key_word)
+        } else {
+            self.url.clone()
+        }
     }
 
     fn match_from_key(&self, key: &str) -> bool {

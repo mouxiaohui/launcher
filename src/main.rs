@@ -22,10 +22,14 @@ fn get_url(args: Args) -> Result<String> {
         None => get_config_dir()?,
     };
     match Sites::load_json(&config_file)?.get_site(&args.site_key) {
-        Some(site) => Ok(site.join(&args.key_word)),
+        Some(site) => Ok(site.join(args.key_word)),
         None => Err(
             anyhow!("The specified website was not found from the configuration file").context(
-                format!("Con't found `{}` in \"{}\"", args.key_word, config_file),
+                format!(
+                    "Con't found `{}` in \"{}\"",
+                    args.key_word.unwrap_or_else(|| "".to_owned()),
+                    config_file
+                ),
             ),
         ),
     }

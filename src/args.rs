@@ -5,7 +5,7 @@ use clap::Parser;
 pub struct Args {
     pub site_key: String,
 
-    pub key_word: String,
+    pub key_word: Option<String>,
 
     /// Configuration to use.
     #[arg(short, long, value_parser)]

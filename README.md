@@ -5,6 +5,9 @@ Quickly open the website on the command line
 ## Usage
 
 ```sh
+$ lc std
+
+# Carry keyword
 $ lc doc tokio
 ```
 
@@ -46,6 +49,11 @@ Mac: ~/Library/Application Suppor/launcher/config.json
     "name": "docs.rs",
     "key": ["docs.rs", "doc"],
     "url": "https://docs.rs/{}"
+  },
+  {
+    "name": "rust-std",
+    "key": ["rust-std", "std"],
+    "url": "https://doc.rust-lang.org/std/"
   }
 ]
 ```
