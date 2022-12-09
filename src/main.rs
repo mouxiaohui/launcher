@@ -26,8 +26,8 @@ fn get_url(args: Args) -> Result<String> {
         None => Err(
             anyhow!("The specified website was not found from the configuration file").context(
                 format!(
-                    "Con't found `{}` in \"{}\"",
-                    args.key_word.unwrap_or_else(|| "".to_owned()),
+                    "Can't found `{}` in \"{}\"",
+                    args.site_key,
                     config_file
                 ),
             ),
